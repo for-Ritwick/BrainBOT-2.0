@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #7f00ff, #e100ff);
+            font-family: Arial, sans-serif;
+        }
+        .chatbot-container {
+            overflow: hidden;
+            height: 90vh;
+            width: 90vw;
+            max-width: 600px; /* Adjust max-width as needed */
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-container">
+        <iframe 
+            src="https://www.openassistantgpt.io/embed/clw43hvqy000120iaydsgcodw/window?chatbox=false"
+            allowfullscreen
+            allow="clipboard-read; clipboard-write"
+        >
+        </iframe>
+    </div>
+    <!-- This chatbot is built using https://openassistantgpt.io/ -->
+</body>
+</html>
