@@ -16,21 +16,18 @@
             font-family: Arial, sans-serif;
         }
         .chatbot-container {
-            overflow: hidden;
-            height: 90vh;
-            width: 90vw;
-            max-width: 600px; /* Adjust max-width as needed */
-            border: 2px solid #ddd;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            background: #fff;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
         }
         iframe {
-            flex: 1;
-            width: 100%;
-            border: none;
+            height: 80vh;
+            width: 480px;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
     </style>
 </head>
@@ -38,7 +35,7 @@
     <div class="chatbot-container">
         <iframe 
             src="https://www.openassistantgpt.io/embed/clw43hvqy000120iaydsgcodw/window?chatbox=false"
-            allowfullscreen
+            allowfullscreen 
             allow="clipboard-read; clipboard-write"
         >
         </iframe>
