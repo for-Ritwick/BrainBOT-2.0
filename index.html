@@ -6,46 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <script>
-        window.addEventListener("message", function(t) {
-            var e = document.getElementById("openassistantgpt-chatbot-iframe"),
-                s = document.getElementById("openassistantgpt-chatbot-button-iframe");
-            if ("openChat" === t.data) {
-                console.log("Toggle chat visibility");
-                if (e && s) {
-                    e.contentWindow.postMessage("openChat", "*");
-                    s.contentWindow.postMessage("openChat", "*");
-                    e.style.pointerEvents = "auto";
-                    e.style.display = "block";
-                    if (window.innerWidth < 640) {
-                        e.style.position = "fixed";
-                        e.style.width = "100%";
-                        e.style.height = "100%";
-                        e.style.top = "0";
-                        e.style.left = "0";
-                        e.style.zIndex = "9999";
-                    } else {
-                        e.style.position = "fixed";
-                        e.style.width = "30rem";
-                        e.style.height = "65vh";
-                        e.style.bottom = "0";
-                        e.style.right = "0";
-                        e.style.top = "";
-                        e.style.left = "";
-                    }
-                } else {
-                    console.error("iframe not found");
-                }
-            } else if ("closeChat" === t.data) {
-                if (e && s) {
-                    e.style.display = "none";
-                    e.style.pointerEvents = "none";
-                    e.contentWindow.postMessage("closeChat", "*");
-                    s.contentWindow.postMessage("closeChat", "*");
-                }
-            }
-        });
-    </script>
+    <style>
+        /* Add custom styles for the chatbot iframe */
+        .chatbot-container {
+            width: 100%;
+            height: 500px; /* Adjust the height as needed */
+            border: 3px solid #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .chatbot-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -66,7 +42,7 @@
             <nav>
                 <ul>
                     <li><a href="#intro">Intro</a></li>
-                    <li><a href="1.html#chatbot">BrainBOT</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
             </nav>
@@ -97,6 +73,19 @@
                 <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
                 <p>BrainBOT represents a leap forward in AI technology, developed to meet the evolving needs of modern communication. Our mission is to empower individuals and businesses with a versatile AI companion that simplifies complex tasks and enriches daily interactions. Whether you're a student, professional, or enthusiast, BrainBOT offers a personalized experience tailored to your interests and preferences.</p>
                 <p>Backed by cutting-edge machine learning algorithms, BrainBOT continually refines its knowledge base to deliver accurate information and intuitive responses. Join us on this journey to redefine human-computer interaction and unlock new possibilities with BrainBOT at your fingertips.</p>
+            </article>
+
+            <!-- Chatbot -->
+            <article id="chatbot">
+                <h2 class="major">Chatbot</h2>
+                <div class="chatbot-container">
+                    <iframe 
+                        src="https://www.openassistantgpt.io/embed/clw43hvqy000120iaydsgcodw/window?chatbox=false"
+                        allowfullscreen 
+                        allow="clipboard-read; clipboard-write"
+                    >
+                    </iframe>
+                </div>
             </article>
 
             <!-- Elements -->
@@ -167,17 +156,94 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     <ul class="actions">
                         <li><a href="#" class="button primary">Default</a></li>
                         <li><a href="#" class="button">Default</a></li>
-                        <li><a href="#" class="button small">Small</a></li>
-                        <li><a href="#" class="button large">Large</a></li>
                     </ul>
-
+                    <ul class="actions stacked">
+                        <li><a href="#" class="button primary">Default</a></li>
+                        <li><a href="#" class="button">Default</a></li>
+                    </ul>
                 </section>
 
-                <!-- Add the chatbot HTML -->
-                <div id="chatbot-container">
-                    <iframe id="openassistantgpt-chatbot-iframe" src="https://example.com/chatbot" style="border: none; display: none; width: 30rem; height: 65vh;"></iframe>
-                    <button id="openassistantgpt-chatbot-button-iframe" onclick="window.postMessage('openChat', '*');">Chat with us!</button>
-                </div>
+                <section>
+                    <h3 class="major">Table</h3>
+                    <h4>Default</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Item One</td>
+                                    <td>Ante turpis integer aliquet porttitor.</td>
+                                    <td>29.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Two</td>
+                                    <td>Vis accumsan vel elit eget laoreet.</td>
+                                    <td>19.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Three</td>
+                                    <td>Felis euismod semper eget duis.</td>
+                                    <td>49.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Four</td>
+                                    <td>Phasellus faucibus mauris in vitae suscipit.</td>
+                                    <td>39.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Five</td>
+                                    <td>Accumsan lacus vel facilisis volutpat est velit egestas dui id ornare.</td>
+                                    <td>59.99</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4>Alternate</h4>
+                    <div class="table-wrapper">
+                        <table class="alt">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Item One</td>
+                                    <td>Ante turpis integer aliquet porttitor.</td>
+                                    <td>29.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Two</td>
+                                    <td>Vis accumsan vel elit eget laoreet.</td>
+                                    <td>19.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Three</td>
+                                    <td>Felis euismod semper eget duis.</td>
+                                    <td>49.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Four</td>
+                                    <td>Phasellus faucibus mauris in vitae suscipit.</td>
+                                    <td>39.99</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Five</td>
+                                    <td>Accumsan lacus vel facilisis volutpat est velit egestas dui id ornare.</td>
+                                    <td>59.99</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
             </article>
 
@@ -185,20 +251,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
         <!-- Footer -->
         <footer id="footer">
-            <div class="inner">
-                <section>
-                    <h3>Get in Touch</h3>
-                    <p>Feel free to reach out to us with any questions or feedback!</p>
-                </section>
-                <section>
-                    <h3>Follow Us</h3>
-                    <ul class="icons">
-                        <li><a href="https://twitter.com" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="https://facebook.com" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                        <li><a href="https://instagram.com" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="https://github.com" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                    </ul>
-                </section>
+            <div class="copyright">
+                &copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
             </div>
         </footer>
 
@@ -206,6 +260,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
