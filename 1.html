@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to bottom, #7f00ff, #e100ff);
+            background: #6a11cb;  /* Single background color */
             font-family: Arial, sans-serif;
         }
         .chatbot-container {
@@ -23,14 +23,12 @@
             height: 100%;
         }
         iframe {
-            height: 80vh;
-            width: 480px;
-            height: 90vh; /* Increased height */
-            width: 90vw;  /* Increased width */
+            height: 90vh;  /* Increased height */
+            width: 90vw;   /* Increased width */
             max-width: 1200px; /* Larger max width for larger screens */
-            border: 2px solid #e2e8f0;
-            border-radius: 0.375rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: none; /* Removed border for a cleaner look */
+            border-radius: 20px; /* Curved corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for a more pronounced effect */
         }
     </style>
 </head>
@@ -43,6 +41,5 @@
         >
         </iframe>
     </div>
-    <!-- This chatbot is built using https://openassistantgpt.io/ -->
 </body>
 </html>
