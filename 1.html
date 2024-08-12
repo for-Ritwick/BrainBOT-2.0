@@ -22,25 +22,29 @@
             align-items: center;
             width: 100%;
             height: 100%;
-            padding: 20px; /* Padding around the iframe */
-            background: rgba(255, 255, 255, 0.1); /* Subtle background for the container */
-            border-radius: 20px; /* Rounded corners */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease; /* Smooth transition for size change */
         }
         iframe {
-            height: 90vh;
-            width: 90vw;
-            max-width: 1200px;
-            border: 3px solid #ffffff; /* White border */
-            border-radius: 15px; /* Rounded corners for iframe */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow */
-            transition: transform 0.3s ease; /* Animation on hover */
+            height: 50vh; /* Small initial height */
+            width: 50vw;  /* Small initial width */
+            max-width: 800px;
+            border: 3px solid #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Transition for scaling */
         }
-        iframe:hover {
-            transform: scale(1.02); /* Slight zoom effect on hover */
+        .chatbot-container:hover iframe {
+            height: 90vh; /* Expanded height on hover */
+            width: 90vw;  /* Expanded width on hover */
+            max-width: 1200px; /* Expanded max width */
+            transform: scale(1.02); /* Slight zoom effect */
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="chatbot-container">
