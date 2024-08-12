@@ -36,6 +36,45 @@
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Link to Google Fonts -->
+    <script>
+        window.addEventListener("message", function(t) {
+            var e = document.getElementById("openassistantgpt-chatbot-iframe"),
+                s = document.getElementById("openassistantgpt-chatbot-button-iframe");
+            if ("openChat" === t.data) {
+                console.log("Toggle chat visibility");
+                if (e && s) {
+                    e.contentWindow.postMessage("openChat", "*");
+                    s.contentWindow.postMessage("openChat", "*");
+                    e.style.pointerEvents = "auto";
+                    e.style.display = "block";
+                    if (window.innerWidth < 640) {
+                        e.style.position = "fixed";
+                        e.style.width = "100%";
+                        e.style.height = "100%";
+                        e.style.top = "0";
+                        e.style.left = "0";
+                        e.style.zIndex = "9999";
+                    } else {
+                        e.style.position = "fixed";
+                        e.style.width = "30rem";
+                        e.style.height = "65vh";
+                        e.style.bottom = "0";
+                        e.style.right = "0";
+                        e.style.top = "";
+                        e.style.left = "";
+                    }
+                } else {
+                    console.error("iframe not found");
+                }
+            }
+            if ("closeChat" === t.data && e && s) {
+                e.style.display = "none";
+                e.style.pointerEvents = "none";
+                e.contentWindow.postMessage("closeChat", "*");
+                s.contentWindow.postMessage("closeChat", "*");
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="chatbot-container">
@@ -43,8 +82,12 @@
             src="https://www.openassistantgpt.io/embed/clw43hvqy000120iaydsgcodw/window?chatbox=false"
             allowfullscreen 
             allow="clipboard-read; clipboard-write"
+            id="openassistantgpt-chatbot-iframe"
         >
         </iframe>
     </div>
+    <iframe src="https://www.openassistantgpt.io/embed/clw43hvqy000120iaydsgcodw/button?chatbox=false"
+        style="z-index: 50; margin-right: 1rem; margin-bottom: 1rem; position: fixed; right: 0; bottom: 0; width: 56px; height: 56px; border: 0; border: 2px solid #e2e8f0; border-radius: 50%; color-scheme: none; background: none;box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"
+        id="openassistantgpt-chatbot-button-iframe"></iframe>
 </body>
 </html>
